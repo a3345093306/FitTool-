@@ -1,5 +1,7 @@
 # FitTool · 健身热量工具（中国版）
 
+**正式线上入口（中文版）：** https://fittool-lias-fittool-cn-d4f4epz09632b25c.webapps.tcloudbase.com/
+
 > 一个移动优先的个人健身与营养追踪 PWA：**设定目标 → 今日计划 → 饮食/训练记录 → 打卡 → 周/月趋势**。
 > 品牌：**猫卡卞 | LiaLab** ｜ 主色 `#E37499` ｜ 界面语言：简体中文
 
@@ -44,9 +46,11 @@ FitTool 想做的是长期闭环：先设定一次个性化的身体与训练目
 
 | 资源 | 地址 |
 | --- | --- |
+| **正式线上入口（中文版）** | `https://fittool-lias-fittool-cn-d4f4epz09632b25c.webapps.tcloudbase.com/` |
 | V2 后端 API（腾讯云 CloudBase Run，运行中） | `https://fittool-api-v2-314671-9-1489196951.sh.run.tcloudbase.com` |
 | 后端健康检查 | `https://fittool-api-v2-314671-9-1489196951.sh.run.tcloudbase.com/api/health` |
-| V1 原型（历史版本，Cloudflare Workers） | `https://fittool-v1.3345093306.workers.dev/` |
+| GitHub 仓库 | `https://github.com/lialab-dev/FitTool-CN` |
+| V1 原型（Legacy / Historical，仅作历史记录，**非当前入口**） | `https://fittool-v1.3345093306.workers.dev/` |
 
 `/api/health` 返回的构建标识为 `v2.3-no-thinking-20260916`。
 
@@ -166,7 +170,7 @@ python -m http.server 5173
 | `AI_TEXT_MODEL` | `hy3` |
 | `AI_VISION_MODEL` | `hy-vision-2.0-instruct` |
 | `AI_TIMEOUT_MS` | `22000`（失败就快速失败，不让前端干等） |
-| `ALLOWED_ORIGIN` | 允许的前端来源；开发阶段可以是 `*`，上线后建议改成具体域名 |
+| `ALLOWED_ORIGIN` | 允许的前端来源；开发阶段可以是 `*`，正式环境应改为 `https://fittool-lias-fittool-cn-d4f4epz09632b25c.webapps.tcloudbase.com`（配置在 CloudBase 控制台，不在仓库里） |
 | `PORT` | 默认 `80`（与 CloudBase Run 的端口探针保持一致） |
 
 **本地运行**
@@ -280,7 +284,7 @@ CloudBase Run 早期部署后一直不健康。原因是 Node 服务默认监听
 
 - 数据只存在浏览器 `localStorage`，换设备或清缓存会丢失，**没有账号与云同步**。
 - 没有服务端数据库（PostgreSQL 是后续计划，尚未实现）。
-- `ALLOWED_ORIGIN` 目前是 `*`，属于上线前的临时配置，正式发布应改成具体域名。
+- `ALLOWED_ORIGIN` 线上目前仍是 `*`（实测响应头为 `access-control-allow-origin: *`），属于上线前的临时配置，正式发布应改成上面表格里的正式域名。
 - 营养与消耗都是估算值，产品规则是"用户确认后才入账"。
 
 ---
