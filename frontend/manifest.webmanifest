@@ -1,0 +1,16 @@
+{
+  "name": "FitTool · 健身热量工具",
+  "short_name": "FitTool",
+  "description": "记录饮食、训练、体重与每日状态的个人健身工具。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff8fb",
+  "theme_color": "#fff8fb",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

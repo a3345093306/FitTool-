@@ -1,0 +1,19 @@
+# Secrets - never commit real keys, only the .env.example template
+.env
+.env.*
+!.env.example
+
+# Logs / OS / editor noise
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Local scratch
+tmp/
+.deploy-ssh/
